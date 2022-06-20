@@ -1,0 +1,35 @@
+<div class="row py-lg-5">
+  <div class="col-lg-6 col-md-8 mx-auto">
+    <img class="img-fluid" [src]="mainImg" [alt]="mainTitle">
+    <h1 class="fw-light">
+      {{mainTitle}}
+    </h1>
+    <p class="lead text-muted">
+      {{mainLead}}
+    </p>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+
+    <div class="col" *ngFor="let card of cards">
+      <div class="card shadow-sm" ngClass="{{card.cardColor}}">
+        <img class="card-img-top" [src]="card.cardImg" [alt]="card.cardTitle">
+
+        <div class="card-body">
+          <h4 class="card-title">
+            {{card.cardTitle}}
+          </h4>
+          <p class="card-text">{{card.cardText}}</p>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="category">
+              Kategória: <strong>{{card.cardCat}}</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
