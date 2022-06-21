@@ -1,7 +1,11 @@
 export type CardDefinitions = {
-    cardPackage: string[];
-    cardCat: string;
-    cardData: CardData[];
+    mainData: MainData,
+    cardPackage: CardCategory[]
+}
+
+export type CardCategory = {
+    cardCat: string,
+    cardData: CardData[]
 }
 
 export type CardData = {
@@ -9,4 +13,10 @@ export type CardData = {
     cardText: string;
     cardImg?: string;
     cardColor: string;
+}
+
+export type MainData = {
+    mainTitle: string;
+    mainLead: string;
+    mainImg: string;
 }

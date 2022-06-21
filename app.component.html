@@ -1,41 +1,40 @@
 <div class="row py-lg-5">
   <div class="col-lg-6 col-md-8 mx-auto">
-    <img class="img-fluid" [src]="mainImg" [alt]="mainTitle">
+    <img class="img-fluid" [src]="cards.mainData.mainImg" [alt]="cards.mainData.mainTitle">
     <h1 class="fw-light">
-      {{mainTitle}}
+      {{cards.mainData.mainTitle}}
     </h1>
     <p class="lead text-muted">
-      {{mainLead}}
+      {{cards.mainData.mainLead}}
     </p>
   </div>
 </div>
 
 <div class="container">
-  <h2>Honvédelem</h2>
+  <ng-container *ngFor="let card of cards.cardPackage">
+    <h2>{{card.cardCat}}</h2>
   <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
 
-    <ng-container *ngFor="let card of cards">
-
-    <div class="col">
+    <div class="col" *ngFor="let item of card.cardData">
       
       <div class="card shadow-sm" ngClass="{{card.cardColor}}">
-        <img class="card-img-top" [src]="card.cardImg" [alt]="">
+        <img *ngIf="item.cardImg" class="card-img-top" [src]="item.cardImg" [alt]="item.cardTitle">
         <div class="card-body">
           <h4 class="card-title">
-            {{card.cardTitle}}
+            {{item.cardTitle}}
           </h4>
-          <p class="card-text">{{card.cardText}}</p>
+          <p class="card-text">{{item.cardText}}</p>
           <div class="d-flex justify-content-between align-items-center">
             <div class="category">
-              Kategória: <strong>{{card.cardCat}}</strong>
+              Kategória: <strong>{{item.cardCat}}</strong>
             </div>
           </div>
         </div>
       </div>
     
     </div>
-  </ng-container>
-
+    
   </div>
+</ng-container>
 </div>
 
