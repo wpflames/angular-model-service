@@ -11,12 +11,15 @@
 </div>
 
 <div class="container">
+  <h2>Honvédelem</h2>
   <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
 
-    <div class="col" *ngFor="let card of cards">
-      <div class="card shadow-sm" ngClass="{{card.cardColor}}">
-        <img class="card-img-top" [src]="card.cardImg" [alt]="card.cardTitle">
+    <ng-container *ngFor="let card of cards">
 
+    <div class="col">
+      
+      <div class="card shadow-sm" ngClass="{{card.cardColor}}">
+        <img class="card-img-top" [src]="card.cardImg" [alt]="">
         <div class="card-body">
           <h4 class="card-title">
             {{card.cardTitle}}
@@ -29,7 +32,10 @@
           </div>
         </div>
       </div>
+    
     </div>
+  </ng-container>
 
   </div>
 </div>
+
